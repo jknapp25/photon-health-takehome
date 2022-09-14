@@ -38,7 +38,7 @@ function App() {
 
   async function handleAddPatient(data) {
     const response = await fetch(
-      "https://localhost:3000/patients",
+      "http://localhost:3000/patients",
       {
         method: "POST",
         headers: {
@@ -67,7 +67,7 @@ function App() {
 
   async function handleAddPrescription(data) {
     const response = await fetch(
-      "https://localhost:3000/prescriptions",
+      "http://localhost:3000/prescriptions",
       {
         method: "POST",
         headers: {
@@ -97,7 +97,7 @@ function App() {
     updItem.status = status;
 
     const response = await fetch(
-      `https://localhost:3000/prescriptions/${id}`,
+      `http://localhost:3000/prescriptions/${id}`,
       {
         method: "PUT",
         headers: {
@@ -124,7 +124,7 @@ function App() {
 
   async function handleDeletePrescription(id) {
     const response = await fetch(
-      `https://localhost:3000/prescriptions/${id}`,
+      `http://localhost:3000/prescriptions/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -149,10 +149,10 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const patientsResponse = await fetch(
-        "https://localhost:3000/patients"
+        "http://localhost:3000/patients",
       );
       const prescriptionsResponse = await fetch(
-        "https://localhost:3000/prescriptions"
+        "http://localhost:3000/prescriptions",
       );
 
       if (patientsResponse.ok) {

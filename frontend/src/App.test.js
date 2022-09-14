@@ -9,7 +9,7 @@ import "@testing-library/jest-dom";
 
 const server = setupServer(
   rest.get(
-    "https://localhost:3000/patients",
+    "http://localhost:3000/patients",
     (req, res, ctx) => {
       return res(
         ctx.json([
@@ -23,13 +23,13 @@ const server = setupServer(
     }
   ),
   rest.get(
-    "https://localhost:3000/prescriptions",
+    "http://localhost:3000/prescriptions",
     (req, res, ctx) => {
       return res(ctx.json([]));
     }
   ),
   rest.post(
-    "https://localhost:3000/prescriptions",
+    "http://localhost:3000/prescriptions",
     (req, res, ctx) => {
       return res(
         ctx.json([
